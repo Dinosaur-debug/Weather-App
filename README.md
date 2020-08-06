@@ -11,4 +11,4 @@ https://account.mapbox.com/auth/signup/
 https://weatherstack.com/signup/free
 
 ## Run
-### node app.js "city name"
+node app.js "city name"
