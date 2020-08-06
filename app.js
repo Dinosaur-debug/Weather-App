@@ -1,7 +1,7 @@
 const chalk = require('chalk');
 const request = require('request')
-const geocode = require('./utils/geocode')
-const forecast = require('./utils/forecast')
+const geocode = require('Location of the geocode file')
+const forecast = require('Location of the forecast file')
 
 
 geocode('Name of your city', (error, data) => {
