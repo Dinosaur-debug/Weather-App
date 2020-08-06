@@ -1,14 +1,25 @@
 const chalk = require('chalk');
-const request = require('request');
 const geocode = require('./utils/geocode');
 const forecast = require('./utils/forecast');
 
-geocode('City Name', (error, data) => {
-    console.log(chalk.redBright('Error:'), error);
-    console.log(chalk.greenBright('Data:'), data);
+const address = process.argv[2]
 
-    forecast(data.location, (error, data) => {
-        console.log(chalk.redBright('Error:'), error);
-        console.log(chalk.greenBright('Data:'), data);
+if (!address) {
+    console.log(chalk.redBright('Please provide an adress'))
+} else {
+    geocode(address, (error, { location }) => {
+        if (error) {
+            return console.log(chalk.redBright(error))
+        }
+
+        forecast(location, (error, forecastData) => {
+            if (error) {
+                return console.log(error)
+            }
+
+            console.log(location)
+            console.log(forecastData)
+        });
     });
-});
+
+}
