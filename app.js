@@ -1,16 +1,14 @@
 const chalk = require('chalk');
-const request = require('request')
-const geocode = require('Location of the geocode file')
-const forecast = require('Location of the forecast file')
+const request = require('request');
+const geocode = require('./utils/geocode');
+const forecast = require('./utils/forecast');
 
+geocode('City Name', (error, data) => {
+    console.log(chalk.redBright('Error:'), error);
+    console.log(chalk.greenBright('Data:'), data);
 
-geocode('Name of your city', (error, data) => {
-    console.log(chalk.redBright('Error:'), error)
-    console.log(chalk.greenBright('Data:'), data)
-})
-
-
-forecast('Name of you city', (error, data) => {
-  console.log(chalk.redBright('Error:'), error)
-  console.log(chalk.greenBright('Data:'), data)
-})
+    forecast(data.location, (error, data) => {
+        console.log(chalk.redBright('Error:'), error);
+        console.log(chalk.greenBright('Data:'), data);
+    });
+});
