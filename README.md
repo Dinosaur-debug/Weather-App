@@ -9,3 +9,6 @@ npm i chalk
 https://account.mapbox.com/auth/signup/
 ### Forecast
 https://weatherstack.com/signup/free
+
+## Run
+### node app.js "city name"
