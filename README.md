@@ -1,5 +1,5 @@
 ## npm
-### Install the npm request
+### request
 npm i postman-request
-### Install the npm clak
+### chalk
 npm i chalk
